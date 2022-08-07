@@ -1,0 +1,400 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainMenu{
+    display: flex;
+    background-color: #344051;
+    color: #ffffff;
+    line-height: 60px;
+    font-weight: 100;
+}
+
+.logo{
+    flex:0 1 50%;
+    text-align: center;
+    font-size: 23px;
+    cursor: pointer;
+   
+}
+.menu__item{
+    margin: 0px 40px 0px 0px;
+    font-size: 17px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.main{
+    height: calc(100%-60px);
+    background: url(../img/Парень.png) no-repeat 90% 100%,url(../img/фон.png) center/cover no-repeat ;
+}
+.hellow{
+    font-size: 80px;
+    color: #2c384a;
+}
+.hellow__whoIAm{
+    font-size: 21px;
+    color: #79818d;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.buttonAboutMe{
+    font-size: 19px;
+    border: 2px solid #6d7682;
+    color: #6d7682;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 14px 15px;
+}
+.developingBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topText{
+    margin: 432px 700px 0px 0px;
+    text-align: center;
+}
+.buttnsTop{
+    margin: 0px 700px 300px 0px;
+}
+.firstButton{
+    margin-right:30px ;
+}
+.titles{
+    font-size: 33px;
+    color:#263244;
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 30px;
+}
+.titleWhatICan{
+    padding-top: 80px;
+}
+.hrBorder{
+    background:url(../img/Черта\ заголовка.png) center;
+    width: 70px;
+    height: 5px;
+    display: block;
+    margin: 0px auto;
+}
+.aboutMe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+    color: #3f495a;
+    text-align: center;
+}
+.aboutMeImg{
+    flex:0 1 10%;
+}
+.textAboutMe{
+    padding: 30px 0px 0px 0px;
+}
+.firsP{
+    padding-bottom: 45px;
+}
+.aboutMe img{
+    margin-top: 60px;
+}
+.downloadSummary{
+    background:url(../img/иконка.png) no-repeat 10% 45%;
+    border: 2px solid #6f707e;
+    padding:10px 10px 12px 35px;
+    color: #6f707e;
+    font-size: 16px;
+    margin-top: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.aboutMe{
+    margin-bottom: 90px;
+}
+.whatICan{
+    background: url(../img/фон3.png);
+    padding-top: 0px;
+    padding-bottom: 80px;
+}
+.myAbilities{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: 0px auto;
+    padding-top: 100px;
+    
+}
+
+.myAbilities :last-child{
+    margin: 0px 0px 0px 0px;
+}
+
+.webDesign{
+    flex: 0 0 15%;
+    text-align: center;
+    margin: 0px 40px 0px 0px;
+}
+.webDesign p{
+    max-height: 70px;
+    overflow-y:hidden ;
+}
+
+.myAbilitiesName{
+    font-size: 18px;
+    color: #cf7600;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.casesTopContent{
+    margin: 45px 0px;
+    text-align: center;
+    font-size: 16px;
+    color: #3f495a;
+}
+.casesForImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.befor,.after{
+    background: #d47742;
+    color: #fdfaf2;
+    font-size: 38px;
+    box-shadow: 0px 5px 0px 0px #bb592b;
+    position: cover;
+    padding: 0px 5px  0px 5px;
+    height: 50px;
+    
+}
+
+.aboutCases{
+    display: flex;
+    justify-content: center;
+  
+}
+.requisites{
+    flex:0 1 20%;
+    color:#384354;
+    padding-top: 35px;
+    
+}
+.projectName{
+    flex:0 1 40%; 
+
+}
+.projectName h2{
+    font-size: 25px;
+    color:#384354;
+    padding-top:35px ;
+}
+.projectName p{
+    color:#3f495a;
+    font-size: 20px;
+}
+.requisites h2{
+    font-size: 25px;
+    padding: 0px 0px 20px 0px;
+}
+.requisites h3{
+    font-size: 16px;
+    padding: 0px 0px 15px 0px;
+}
+.buttonVisit{
+    color:#f3f6fa;
+    background-color: #63b5ae;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    margin-top:10px ;
+    cursor: pointer;
+}
+.costCalculation h2{
+    font-weight: bold;
+
+}
+.siteTipe{
+    margin-top: 60px;
+}
+.costCalculation{
+    display: flex;
+    flex-direction: column;
+    font-size: 29px;
+    color: #1c2534;
+    max-width: 1250px;
+    justify-content: center;
+    padding-left: 35%;
+}
+.costCalculation hr{
+    background-color: #d1d1d1;
+    height: 2px;
+    margin-bottom: 23px;
+    
+}
+.costCalculation select{
+flex: 0 1 20%;
+background-color: #eeeeee;
+font-size: 15px;
+border-radius: 5px;
+color:#7d7d7d ;
+padding: 20px;
+appearance: none;
+border: 1px solid silver;
+background: url(../img/arrow.png) no-repeat;
+background-size: 15px 15px;
+background-position: 97% 50%;
+margin: 25px 0px 50px 0px;
+cursor: pointer;
+}
+.firstRow{
+    padding-bottom: 20px;
+}
+
+.statistics{
+    background-image: url(../img/фон2.png);
+    background-repeat: no-repeat;
+    margin-top: 150px;
+}
+.someStatistics{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1150px;
+    justify-content: space-between;
+    margin: 90px auto 0px auto;
+}
+.statisticsBox{
+    flex: 0 1 20%;
+    text-align: center;
+    padding-right: 50px;
+    color: #323e4f;
+}
+.statisticsBox h3{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0px;
+}
+
+.optimization h3{
+    padding-right: 6px;
+}
+
+.statisticsBox p{
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 100px;
+}
+.statisticsTitle{
+    padding-top: 90px;
+    text-transform: uppercase;
+}
+.reviewsBody{
+    text-align: center;
+    max-width: 1250px;
+    margin: 60px auto;
+}
+.reviewsBody p{
+    padding: 40px 0px;
+    font-size: 17px;
+    color: #243042;
+}
+.firstWorld{
+    font-weight: bold;
+}
+.сontacts{
+    background-image: url(../img/Фон4.png);
+
+        color: white;
+}
+.сontactsTitle{
+    color: white;
+    text-transform: uppercase;
+    font-size: 33px;
+    padding-top: 30px;
+}
+.contactsContent>p {
+    font-size: 16.67px ;
+   margin-top: 35px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.someContacts{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: 0px auto 40px auto;
+}
+
+.ContactBoxes{
+    flex: 0 1 33%;
+    text-align: center;
+    padding-right: 33px;
+}
+.ContactBoxes p{
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+.сontacts h3{
+    text-align: center;
+    font-size: 21px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.someInput{
+    display: flex;
+    max-width: 1250px;
+    margin: 0px auto;
+
+}
+.inputName, .inputEmale{
+    display: block;
+    font-size: 17px;
+    padding: 10px 15px;
+    color: #5d5d5e;
+    flex: 0 1 50%;
+    margin-right: 30px;
+    opacity: 0.8;
+    margin-left: 27px;
+}
+.inputEmale{
+    margin-left: 0px;
+}
+.areaMessage{
+    display: block;
+    margin: 12px auto 30px auto;
+    padding: 10px 10px;
+    color: #5d5d5e;
+    opacity: 0.8;
+}
+#inpEnter{
+    display: block;
+    margin: 0px auto;
+    background: none;
+    border: 3px solid white;
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 21px;
+    cursor: pointer;
+
+}
+.contactsContent{
+    padding-bottom: 70px;
+}
+footer{
+    text-align: center;
+    color: white;
+    line-height: 95px;
+    background-color: #354051;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
