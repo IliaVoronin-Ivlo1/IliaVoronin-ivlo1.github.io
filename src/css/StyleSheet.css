@@ -2,6 +2,11 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
 
 .mainMenu{
     display: flex;
@@ -9,21 +14,108 @@ body{
     color: #ffffff;
     line-height: 60px;
     font-weight: 100;
+    max-height: 60px;
+    overflow-y: hidden;
 }
-
+/*  Стили логотипа сайта  */
 .logo{
     flex:0 1 50%;
     text-align: center;
     font-size: 23px;
     cursor: pointer;
+    animation: logoAnimation forwards ease-in-out;
+    opacity: 0;
+    animation-duration: 1.2s;
    
 }
+
+@keyframes logoAnimation {
+
+    0%{
+        margin-left: -100px;
+        opacity: 0;
+    }
+    50%{
+        margin-left: 150px;
+        opacity: 1; 
+    }
+
+    100%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+/*  Конец стилей для логотипа сайта  */
+
+
+/*  Стили меню сайта  */
 .menu__item{
     margin: 0px 40px 0px 0px;
     font-size: 17px;
     cursor: pointer;
     text-transform: uppercase;
+    opacity: 0;
 }
+.mainMenu a{
+    margin: 0px 40px 0px 0px;
+    font-size: 17px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+}
+
+.menu__item:nth-child(odd){
+    animation: menuItemTopAnimatoin  forwards  ease-in-out ;
+    animation-duration: 0.8s;
+    animation-delay: 1s;
+    }
+
+ .menu__item:nth-child(even){
+    animation:menuItemBottomAnimatoin forwards ease-in-out ;
+    animation-duration: 0.8s;
+    animation-delay: 1.8s;
+    }
+
+@keyframes menuItemTopAnimatoin {
+
+    0%{
+        margin-top: -110px;
+        opacity: 0px;
+    }
+
+    100%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+
+}
+
+@keyframes menuItemBottomAnimatoin {
+
+    0%{
+        margin-top: 110px;
+        opacity: 0px;
+    }
+
+    100%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+
+}
+
+.mainMenu a:visited{
+    color: white;
+}
+.mainMenu a:active{
+    color: #c57308;
+    transform: scale(1.2);
+    display: inline-block;
+}
+
+/*  Конец стилей для меню сайта  */
+
 .main{
     height: calc(100%-60px);
     background: url(../img/Парень.png) no-repeat 90% 100%,url(../img/фон.png) center/cover no-repeat ;
@@ -38,6 +130,8 @@ body{
     padding-top: 40px;
     padding-bottom: 60px;
 }
+
+/*  Стили для кнопок  */
 .buttonAboutMe{
     font-size: 19px;
     border: 2px solid #6d7682;
@@ -45,11 +139,55 @@ body{
     background-color: #ffffff;
     border-radius: 5px;
     padding: 14px 15px;
+    position: relative;
+   
+    
 }
+
+.buttonAboutMe:hover{
+    color: white;
+    background-color:rgb(52,64,81) ;
+    transition-duration:1s;
+    animation:shadowAnimation infinite linear  alternate;
+    animation-duration: 0.7s;
+ 
+}
+
+
+@keyframes shadowAnimation {
+    0%{
+        box-shadow: 0 0 30px 12px rgb(50, 82, 126);
+    }
+    100%{
+        box-shadow: 0 0 30px 14px #011d41;
+    }
+}
+
+
+/*  Конец стилей для кнопок  */
+
+
 .developingBox{
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: moveMain forwards ease;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-delay: 3.2s;
+}
+
+@keyframes moveMain {
+0%{
+    opacity: 0;
+    margin-left: -600px;
+}
+100%{
+    opacity: 1;
+    margin-left: 0px;
+}
+
+    
 }
 .topText{
     margin: 432px 700px 0px 0px;
@@ -61,6 +199,11 @@ body{
 .firstButton{
     margin-right:30px ;
 }
+
+
+
+/* Конец стилей основной части первой страницы*/
+
 .titles{
     font-size: 33px;
     color:#263244;
@@ -71,13 +214,38 @@ body{
 .titleWhatICan{
     padding-top: 80px;
 }
+
+/* Cтили черты */
+
 .hrBorder{
-    background:url(../img/Черта\ заголовка.png) center;
-    width: 70px;
+    background:rgb(235,120,0);
+    width: 100%;
     height: 5px;
     display: block;
     margin: 0px auto;
+    
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    .hrBorder {
+        animation: hrAnimation forwards ease;
+        animation-duration: 1s;
+    }
+  }
+
+@keyframes hrAnimation {
+    0%{
+         width: 100%;
+    }
+
+    100%{
+        width: 70px;
+    }
+}
+
+/* Конец стилей черты */
+
+
 .aboutMe{
     display: flex;
     flex-direction: column;
@@ -85,10 +253,18 @@ body{
     font-size: 17px;
     color: #3f495a;
     text-align: center;
+    transform-style: preserve-3d;
 }
 .aboutMeImg{
     flex:0 1 10%;
+    transform: rotateY(0deg);
+    transition: all 0.8s ease 0s;
+    transition: 1s;
 }
+.aboutMeImg:hover{
+    transform: rotateY(180deg); 
+}
+
 .textAboutMe{
     padding: 30px 0px 0px 0px;
 }
@@ -98,6 +274,7 @@ body{
 .aboutMe img{
     margin-top: 60px;
 }
+/* Стили для кнопки загрузки */
 .downloadSummary{
     background:url(../img/иконка.png) no-repeat 10% 45%;
     border: 2px solid #6f707e;
@@ -108,11 +285,21 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+
+.downloadSummary:hover{
+    color: white;
+    background-color:rgb(52,64,81) ;
+    transition-duration:1s;
+    animation:shadowAnimation infinite linear  alternate;
+    animation-duration: 0.7s;
+}
+/* Конец стилей для кнопки загрузки */
+
 .aboutMe{
     margin-bottom: 90px;
 }
 .whatICan{
-    background: url(../img/фон3.png);
+    background: url(../img/фон3.png) fixed no-repeat 50%;
     padding-top: 0px;
     padding-bottom: 80px;
 }
@@ -159,17 +346,36 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+/*Стили реалистичного нажатия кнопки*/
+
 .befor,.after{
     background: #d47742;
     color: #fdfaf2;
     font-size: 38px;
     box-shadow: 0px 5px 0px 0px #bb592b;
-    position: cover;
+    position: relative;
     padding: 0px 5px  0px 5px;
     height: 50px;
+    top: 0;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    
     
 }
+.befor{
+left: 33px;
+}
+.after{
+    right: 33px;
+}
 
+.befor:active,.after:active{
+    top: 2px;
+    box-shadow: 0 3px 0px #bb592b;
+}
+
+/*Конец стилей реалистичного нажатия кнопки*/
 .aboutCases{
     display: flex;
     justify-content: center;
@@ -202,7 +408,10 @@ body{
     font-size: 16px;
     padding: 0px 0px 15px 0px;
 }
+
+/* Стили для кнопки посещения */
 .buttonVisit{
+    top: 0px;
     color:#f3f6fa;
     background-color: #63b5ae;
     padding: 15px 40px;
@@ -210,7 +419,20 @@ body{
     font-size: 25px;
     margin-top:10px ;
     cursor: pointer;
+    box-shadow: 0px 5px 0px 0px #175e58;
+    position: relative;
+    transition-duration: 0.3s;
 }
+
+.buttonVisit:active{
+    top: 2px;
+    box-shadow: 0 3px 0px #175e58;
+    background-color: #298a82;
+
+}
+
+/* Конец стилей для кнопки посещения */
+
 .costCalculation h2{
     font-weight: bold;
 
@@ -254,6 +476,8 @@ cursor: pointer;
 
 .statistics{
     background-image: url(../img/фон2.png);
+    background-attachment: fixed;
+    background-position: 50%;
     background-repeat: no-repeat;
     margin-top: 150px;
 }
@@ -285,20 +509,37 @@ cursor: pointer;
     font-weight: bold;
     padding-bottom: 100px;
 }
+
+
+
 .statisticsTitle{
     padding-top: 90px;
     text-transform: uppercase;
 }
+
+/* Стили для раздела обзоры */
+
 .reviewsBody{
     text-align: center;
     max-width: 1250px;
     margin: 60px auto;
+    transform-style: preserve-3d;
 }
+
+.reviewsBody>img{
+    transition-duration:1s ;
+}
+
+.reviewsBody>img:hover{
+    transform: scale(1.4);
+}
+
 .reviewsBody p{
     padding: 40px 0px;
     font-size: 17px;
     color: #243042;
 }
+/* Конец стилей для раздела обзоры */
 .firstWorld{
     font-weight: bold;
 }
@@ -347,7 +588,10 @@ cursor: pointer;
     max-width: 1250px;
     margin: 0px auto;
 
+
 }
+
+
 .inputName, .inputEmale{
     display: block;
     font-size: 17px;
@@ -368,6 +612,37 @@ cursor: pointer;
     color: #5d5d5e;
     opacity: 0.8;
 }
+
+/* Стили для текстовых полей */
+
+
+.textArea:focus{
+opacity: 1;
+border: 2px solid rgb(153, 152, 152);
+animation:TexAreaAnimation infinite linear  alternate;
+animation-duration: 2s;
+color: white;
+font-size: 14px;
+}
+
+@keyframes TexAreaAnimation {
+    
+0%{
+    background-color:rgb(52,64,81) ;
+    box-shadow: 0 0 60px 13px #4d586d;
+    
+}
+
+100%{
+    background-color: #1E3B70;
+    box-shadow: 0 4px 60px 12px rgb(240, 203, 164);
+}
+
+}
+
+/* Конец стилей для текстовых полей */
+
+/* Стили для кнопки отправить сообщения */
 #inpEnter{
     display: block;
     margin: 0px auto;
@@ -378,8 +653,26 @@ cursor: pointer;
     padding: 15px;
     font-size: 21px;
     cursor: pointer;
-
+    transition-duration:1s;
 }
+
+#inpEnter:hover{
+    color: white;
+    background-color:rgb(9, 25, 48) ;
+    transition-duration:1s;
+    animation:lastButtonAnimation infinite linear  alternate;
+    animation-duration: 0.7s;
+}
+
+@keyframes lastButtonAnimation {
+    0%{
+        box-shadow: 0 0 10px 10px rgb(96, 99, 102);
+    }
+    100%{
+        box-shadow: 0 0 10px 12px #c3c6ca;
+    }
+}
+/* Конец стилей для кнопки отправить сообщения */
 .contactsContent{
     padding-bottom: 70px;
 }
@@ -390,6 +683,59 @@ footer{
     background-color: #354051;
     font-size: 13px;
 }
+
+.someImges{
+    transform: rotate(0deg);
+}
+
+.someImges:hover{
+    animation: trambling-animation;
+    animation-duration: 1s;
+}
+@keyframes trambling-animation {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+      }
+      10%, 30% {
+        transform: rotate(-10deg);
+      }
+      20%, 40% {
+        transform: rotate(10deg);
+      }
+}
+
+.ContactBoxes{
+transform-style: preserve-3d;
+}
+.imgForDevelopment{
+    transition-duration:1s ;
+    animation:lastAnimationForImg ease ;
+    transform: rotateY(0deg);
+    background-color: red;
+}
+
+.imgForDevelopment:hover{
+    animation:lastAnimationForImg ease linear;
+    transition-duration:1s ;
+}
+
+
+@keyframes lastAnimationForImg{
+    0% { 
+        transform: rotateY(0deg);
+        transform:translateX(120px); 
+    }
+    100% { 
+        transform: rotateY(360deg); 
+        transform:translateX(120px); 
+    }
+    }
+
+
+
+
+
+
 
 
 
